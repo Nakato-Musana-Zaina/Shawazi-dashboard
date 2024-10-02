@@ -10,10 +10,8 @@ import Sidebar from '../components/Sidebar';
 const Dashboard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-1 xl:grid-cols-2 gap-10 p-4 ml-80 mt-10 mr-20">
-      <Sidebar setActiveChart={function (chartName: string): void {
-        throw new Error('Function not implemented.');
-      } }/>
-      <h2> Hello, Welocome to Shawazi Dashboard</h2>
+      <Sidebar setActiveChart={() => {}} />
+      <h2>Hello, Welcome to Shawazi Dashboard</h2>
       <AgreementsChart />
       <LandDetailsChart />
       <TransactionsChart />

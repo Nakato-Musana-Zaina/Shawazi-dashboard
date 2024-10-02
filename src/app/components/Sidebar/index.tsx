@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; 
 import { IoStatsChartSharp } from "react-icons/io5";
 import { MdOutlinePayments, MdOutlineSettings } from "react-icons/md";
 import { LuUsers2 } from "react-icons/lu";
@@ -32,11 +33,11 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveChart }) => {
     }, []);
 
     const menuItems = [
-        { name: 'Dashboard', icon: <IoStatsChartSharp className="w-8 h-8 mr-2"/>, href: '/' }, // Adjust if needed
-        { name: 'Agreements', icon: <LiaFileContractSolid className="w-8 h-8 mr-2"/>, href: '/AgreementsChart' }, // Adjust if needed
-        { name: 'Payments', icon: <MdOutlinePayments className="w-8 h-8 mr-2"/>, href: '/TransactionsChart', highlightChart: 'TransactionsChart' }, // Adjust if needed
-        { name: 'Users', icon: <LuUsers2 className="w-8 h-8 mr-2"/>, href: '/UsersCharts' }, // Adjust if needed
-        { name: 'Land Plots', icon: <LuUsers2 className="w-8 h-8 mr-2"/>, href: '/SearchLandCard' }, // Adjust if needed
+        { name: 'Dashboard', icon: <IoStatsChartSharp className="w-8 h-8 mr-2"/>, href: '/' },
+        { name: 'Agreements', icon: <LiaFileContractSolid className="w-8 h-8 mr-2"/>, href: '/AgreementsChart' },
+        { name: 'Payments', icon: <MdOutlinePayments className="w-8 h-8 mr-2"/>, href: '/TransactionsChart', highlightChart: 'TransactionsChart' },
+        { name: 'Users', icon: <LuUsers2 className="w-8 h-8 mr-2"/>, href: '/UsersCharts' },
+        { name: 'Land Plots', icon: <LuUsers2 className="w-8 h-8 mr-2"/>, href: '/SearchLandCard' },
     ];
 
     const toggleMenu = () => {
@@ -58,14 +59,15 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveChart }) => {
                 <span className="ml-4 text-lg font-semibold text-[#562B00]"></span>
             </div>
 
-            {/* Sidebar */}
+           
             <div
                 className={`fixed top-0 left-0 h-full bg-white transition-all duration-300 ease-in-out 
                 ${showSidebar || isOpen ? 'w-72' : 'w-0'} overflow-hidden border-r border-gray-300 shadow-[4px_0px_10px_-2px_rgba(87,_50,_0,_0.5)] z-40`}
             >
                 <div className="flex flex-col h-full">
                     <div className="p-6 text-center">
-                        <img src="/media/logo.png" alt="Shawazi Logo" className="w-[40%] mx-auto mb-4 mt-3" />
+                       
+                        <Image src="/media/logo.png" alt="Shawazi Logo" width={160} height={160} className="w-[40%] mx-auto mb-4 mt-3" />
                         <h1 className="text-2xl font-bold text-secondary">Shawazi</h1>
                     </div>
                     <nav className="flex-grow">
