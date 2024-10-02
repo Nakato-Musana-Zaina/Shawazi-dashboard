@@ -1,13 +1,14 @@
+"use client";
+
 import React, { useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
 import { Card, CardContent, CardHeader } from '../Ui';
 import useUsersData from '@/app/hooks/useUsersData';
 
-// Define the shape of user data
 interface User {
-  id: number; // or string, depending on your user ID type
+  id: number;
   role: 'seller' | 'buyer' | 'lawyer';
-  // Add any other properties that a user may have
+
 }
 
 const UsersChart = () => {
@@ -20,7 +21,6 @@ const UsersChart = () => {
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
 
-  // Type assertion to tell TypeScript about the structure of usersData
   const totalSellers = usersData ? (usersData as User[]).filter(user => user.role === 'seller').length : 0;
   const totalBuyers = usersData ? (usersData as User[]).filter(user => user.role === 'buyer').length : 0;
   const totalLawyers = usersData ? (usersData as User[]).filter(user => user.role === 'lawyer').length : 0; 
