@@ -36,7 +36,7 @@ const Teaser = () => {
             with our system
           </p>
           <Link href="/DashboardData" onClick={handleClick}>
-            <button className="w-full md:w-60 h-14 bg-[#508408] text-white font-bold rounded-md hover:bg-green-600 transition duration-300 lg:mt-8 lg:mb-6 flex items-center justify-center mx-auto lg:mx-0">
+            <button className="w-full md:w-60 h-14 bg-[#508408] text-white font-bold rounded-md hover:bg-green-600 transition duration-100 lg:mt-8 lg:mb-6 flex items-center justify-center mx-auto lg:mx-0">
               Continue
             </button>
           </Link>

@@ -1,10 +1,11 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Card, CardContent, CardHeader } from '../Ui';
 import useAgreementsData from '@/app/hooks/useAgreementData';
 import dayjs from 'dayjs'; 
 import advancedFormat from 'dayjs/plugin/advancedFormat'; 
+
 dayjs.extend(advancedFormat); 
 
 interface MonthlyAgreementsData {
@@ -12,7 +13,11 @@ interface MonthlyAgreementsData {
   count: number;
 }
 
-const AgreementsProgressChart = () => {
+interface AgreementsProgressChartProps {
+  isActive: boolean; // Prop to determine if this chart is active
+}
+
+const AgreementsProgressChart: React.FC<AgreementsProgressChartProps> = ({ isActive }) => {
   const { agreementsData, loading, error } = useAgreementsData();
   const [monthlyAgreements, setMonthlyAgreements] = useState<MonthlyAgreementsData[]>([]);
 
@@ -38,7 +43,7 @@ const AgreementsProgressChart = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <Card className="w-full md:w-3/4 lg:w-full h-[400px] mx-auto">
+    <Card className={`w-full md:w-3/4 lg:w-full h-[400px] mx-auto ${isActive ? 'border-4 border-orange-600' : ''}`}>
       <CardHeader>
         <h2 className="text-xl font-bold">Agreements Progress</h2>
         <p className="text-sm text-gray-500">
@@ -62,26 +67,3 @@ const AgreementsProgressChart = () => {
 };
 
 export default AgreementsProgressChart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
