@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchAgreements } from "../utils/getAgreement";
-import { Dayjs } from "dayjs"; // Import Dayjs type
+import { Dayjs } from "dayjs";
 
 const useAgreementsData = () => {
   const [agreementsData, setAgreementsData] = useState<

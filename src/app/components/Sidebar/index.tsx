@@ -67,7 +67,7 @@ const Sidebar: React.FC<SidebarProps> = ({ setActiveChart }) => {
                 <div className="flex flex-col h-full">
                     <div className="p-6 text-center">
                        
-                        <Image src="/media/logo.png" alt="Shawazi Logo" width={160} height={160} className="w-[40%] mx-auto mb-4 mt-3" />
+                        <Image src="/media/shawazilogo.png" alt="Shawazi Logo" width={160} height={160} className="w-[40%] mx-auto mb-4 mt-3" />
                         <h1 className="text-2xl font-bold text-secondary">Shawazi</h1>
                     </div>
                     <nav className="flex-grow">
